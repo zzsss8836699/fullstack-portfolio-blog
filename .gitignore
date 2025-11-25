@@ -1,0 +1,35 @@
+# Dependencies
+node_modules/
+*/node_modules/
+
+# Environment variables
+.env
+backend/.env
+frontend/.env
+
+# Build outputs
+frontend/build/
+frontend/dist/
+
+# Logs
+*.log
+npm-debug.log*
+logs/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Test coverage
+coverage/
+
+# Misc
+.cache/
+.temp/

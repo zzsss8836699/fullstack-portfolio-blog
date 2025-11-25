@@ -1,22 +1,13 @@
 {
   "version": 2,
-  "name": "fullstack-portfolio-blog",
-  "builds": [
+  "name": "portfolio-blog-frontend",
+  "buildCommand": "npm run build",
+  "outputDirectory": "build",
+  "framework": "create-react-app",
+  "rewrites": [
     {
-      "src": "frontend/package.json",
-      "use": "@vercel/static-build",
-      "config": {
-        "distDir": "frontend/build"
-      }
+      "source": "/(.*)",
+      "destination": "/index.html"
     }
-  ],
-  "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "/frontend/$1"
-    }
-  ],
-  "env": {
-    "REACT_APP_API_URL": "https://your-backend-url.onrender.com/api"
-  }
+  ]
 }

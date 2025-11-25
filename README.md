@@ -1,195 +1,204 @@
-# Portfolio & Blog - Full Stack Project
+# Full-Stack Portfolio & Blog Application
 
-A complete full-stack web application consisting of a RESTful API backend and a React frontend for managing and displaying portfolio projects and blog posts.
+A complete full-stack web application with separate backend API and frontend application, both deployed on Vercel.
 
-## Project Structure
+---
+
+## 📦 Repository Structure
+
+This repository contains **TWO SEPARATE PROJECTS**:
 
 ```
-stuck1/
-├── backend/          # Node.js/Express API
-│   ├── models/       # Mongoose models
-│   ├── controllers/  # Route controllers
-│   ├── routes/       # API routes
-│   ├── middleware/   # Auth middleware
-│   └── server.js     # Entry point
-└── frontend/         # React application
-    ├── src/
-    │   ├── components/
-    │   ├── pages/
-    │   ├── context/
-    │   └── App.js
-    └── public/
+fullstack-portfolio-blog/
+├── backend/              # Backend API (Assignment 1)
+│   ├── models/          # Mongoose schemas
+│   ├── controllers/     # Route controllers
+│   ├── routes/          # API routes
+│   ├── middleware/      # Auth middleware
+│   ├── server.js        # Server entry point
+│   └── README.md        # Backend documentation
+│
+├── frontend/            # Frontend Application (Assignment 2)
+│   ├── src/
+│   │   ├── components/  # React components
+│   │   ├── pages/       # Page components
+│   │   ├── context/     # Auth context
+│   │   └── App.js       # Main app
+│   └── README.md        # Frontend documentation
+│
+└── README.md            # This file
 ```
 
-## Live URLs
+---
 
-- **Frontend**: [Deploy to Vercel](https://vercel.com) - React Application
-- **Backend API**: [Deploy to Render](https://render.com) - Node.js/Express API
-- **Database**: MongoDB Atlas (已配置 / Already configured)
+## 🎓 Assignment 1: Backend API
 
-### 本地开发 URLs / Local Development URLs
-- **Frontend**: http://localhost:3000
-- **Backend API**: http://localhost:5000
-- **API Health Check**: http://localhost:5000/api/health
+### Submission Information
 
-## Features
+**Live Backend API URL:**
+```
+https://portfolio-blog-47o1zr9pi-asdosadkkoas-projects.vercel.app
+```
 
-### Backend API
-- RESTful API with Express.js
-- MongoDB Atlas database with Mongoose
-- JWT authentication and authorization
-- Password hashing with bcrypt
-- Protected routes with middleware
-- Full CRUD operations for Projects and Blog Posts
-- Comment system for blog posts
-- Contact form message handling
+**Source Code Location:**
+- Repository: https://github.com/zzsss8836699/fullstack-portfolio-blog
+- Backend Code: `/backend` directory
 
-### Frontend
-- React with React Router
-- Context API for global state management
-- Responsive design with Tailwind CSS
-- HarmonyOS-inspired UI with green and pink color scheme
-- Protected admin dashboard
-- Real-time API integration
+**Documentation:**
+- **README.md**: [backend/README.md](./backend/README.md)
+- Contains: All API endpoints, purposes, Body/Params examples, Request/Response examples
+
+### Quick Links
+- API Health Check: https://portfolio-blog-47o1zr9pi-asdosadkkoas-projects.vercel.app/api/health
+- API Documentation: [backend/README.md](./backend/README.md)
+
+---
+
+## 🎓 Assignment 2: Frontend Application
+
+### Submission Information
+
+**Live Frontend URL:**
+```
+https://portfolio-blog-frontend-ln7h5bpo5-asdosadkkoas-projects.vercel.app
+```
+
+**Source Code Location:**
+- Repository: https://github.com/zzsss8836699/fullstack-portfolio-blog
+- Frontend Code: `/frontend` directory
+
+**Documentation:**
+- **README.md**: [frontend/README.md](./frontend/README.md)
+- Contains: All API routes, functionality, Body/Params, example requests, code samples
+
+### Quick Links
+- Live Application: https://portfolio-blog-frontend-ln7h5bpo5-asdosadkkoas-projects.vercel.app
+- Frontend Documentation: [frontend/README.md](./frontend/README.md)
+
+---
 
 ## 🚀 Quick Start
 
-### 重要提示 / Important Note
-
-如果您在安装依赖时遇到权限错误，请先运行：
-If you encounter permission errors when installing dependencies, run first:
-
-```bash
-sudo chown -R $(whoami) ~/.npm
-```
-
-详细的安装和配置说明请查看：**[完整安装指南 SETUP_GUIDE.md](./SETUP_GUIDE.md)**
-For detailed setup and configuration instructions, see: **[Complete Setup Guide SETUP_GUIDE.md](./SETUP_GUIDE.md)**
-
 ### Backend Setup
 
-1. Navigate to backend directory:
-   ```bash
-   cd backend
-   ```
+```bash
+cd backend
+npm install
+cp .env.example .env
+# Edit .env with your MongoDB URI and JWT secret
+npm start
+```
 
-2. Install dependencies:
-   ```bash
-   npm install
-   ```
-
-3. Copy and configure `.env` file:
-   ```bash
-   cp .env.example .env
-   # Edit .env and add your MongoDB URI and JWT secret
-   ```
-
-4. Start the server:
-   ```bash
-   npm start
-   ```
+Server runs on http://localhost:5000
 
 ### Frontend Setup
 
-1. Navigate to frontend directory:
-   ```bash
-   cd frontend
-   ```
+```bash
+cd frontend
+npm install
+cp .env.example .env
+# Edit .env with backend API URL
+npm start
+```
 
-2. Install dependencies:
-   ```bash
-   npm install
-   ```
+Application runs on http://localhost:3000
 
-3. Copy and configure `.env` file:
-   ```bash
-   cp .env.example .env
-   # Default config points to http://localhost:5000/api
-   ```
+---
 
-4. Start the development server:
-   ```bash
-   npm start
-   ```
-
-5. Open browser to http://localhost:3000
-
-## API Endpoints
-
-完整的 API 文档请查看 [backend/README.md](./backend/README.md)
-For complete API documentation, see [backend/README.md](./backend/README.md)
-
-### Quick Reference / 快速参考
-
-**Authentication / 认证**
-- `POST /api/users/register` - 注册用户 / Register user
-- `POST /api/users/login` - 登录 / Login
-
-**Projects / 项目**
-- `GET /api/projects` - 获取所有项目 (公开) / Get all projects (public)
-- `POST /api/projects` - 创建项目 (需登录) / Create project (auth required)
-- `PUT /api/projects/:id` - 更新项目 (需登录) / Update project (auth required)
-- `DELETE /api/projects/:id` - 删除项目 (需登录) / Delete project (auth required)
-
-**Blog / 博客**
-- `GET /api/blog` - 获取所有文章 (公开) / Get all posts (public)
-- `GET /api/blog/:id` - 获取文章详情 (公开) / Get post details (public)
-- `POST /api/blog` - 创建文章 (需登录) / Create post (auth required)
-- `PUT /api/blog/:id` - 更新文章 (需授权) / Update post (authorized)
-- `DELETE /api/blog/:id` - 删除文章 (需授权) / Delete post (authorized)
-
-**Comments / 评论**
-- `GET /api/blog/:postId/comments` - 获取评论 (公开) / Get comments (public)
-- `POST /api/blog/:postId/comments` - 添加评论 (需登录) / Add comment (auth required)
-
-**Contact / 联系**
-- `POST /api/contact` - 发送消息 (公开) / Send message (public)
-
-## Deployment
-
-### Backend Deployment (Render/Heroku)
-
-1. Push code to GitHub
-2. Connect repository to Render/Heroku
-3. Set environment variables:
-   - `MONGODB_URI`
-   - `JWT_SECRET`
-   - `NODE_ENV=production`
-4. Deploy
-
-### Frontend Deployment (Vercel/Netlify)
-
-1. Build the project:
-   ```bash
-   cd frontend
-   npm run build
-   ```
-
-2. Deploy the `build` folder or connect via Git
-3. Set environment variable:
-   - `REACT_APP_API_URL` (your deployed backend URL)
-
-## Technologies
+## 💻 Technologies
 
 ### Backend
-- Node.js
-- Express.js
-- MongoDB (MongoDB Atlas)
-- Mongoose
-- JWT (jsonwebtoken)
-- bcryptjs
-- Helmet
-- CORS
-- dotenv
+- Node.js & Express.js
+- MongoDB Atlas & Mongoose
+- JWT Authentication
+- bcryptjs, Helmet, CORS
+- Deployed on Vercel
 
 ### Frontend
-- React 18
-- React Router DOM
-- Tailwind CSS
-- Axios
-- Context API
+- React 18 & React Router DOM
+- Tailwind CSS (HarmonyOS design)
+- Axios & Context API
+- Deployed on Vercel
 
-## License
+---
+
+## 📡 API Endpoints Summary
+
+| Method | Endpoint | Description | Auth |
+|--------|----------|-------------|------|
+| POST | `/api/users/register` | Register user | No |
+| POST | `/api/users/login` | Login user | No |
+| GET | `/api/projects` | Get all projects | No |
+| POST | `/api/projects` | Create project | Yes |
+| PUT | `/api/projects/:id` | Update project | Yes |
+| DELETE | `/api/projects/:id` | Delete project | Yes |
+| GET | `/api/blog` | Get all posts | No |
+| POST | `/api/blog` | Create post | Yes |
+| PUT | `/api/blog/:id` | Update post | Yes |
+| DELETE | `/api/blog/:id` | Delete post | Yes |
+| POST | `/api/blog/:postId/comments` | Add comment | Yes |
+| POST | `/api/contact` | Send message | No |
+
+**Total: 15 endpoints** (See [backend/README.md](./backend/README.md) for details)
+
+---
+
+## 🎨 Features
+
+### Backend Features
+- ✅ RESTful API design
+- ✅ JWT authentication & authorization
+- ✅ MongoDB Atlas integration
+- ✅ Complete CRUD operations
+- ✅ Password hashing with bcrypt
+- ✅ Secure headers with Helmet
+- ✅ Error handling middleware
+- ✅ Protected routes
+
+### Frontend Features
+- ✅ User registration & login
+- ✅ Protected admin dashboard
+- ✅ Projects gallery (public)
+- ✅ Blog with comments (public)
+- ✅ Contact form (public)
+- ✅ Responsive HarmonyOS design
+- ✅ Loading & error states
+- ✅ Context API state management
+
+---
+
+## 📚 Documentation
+
+| Document | Purpose | Location |
+|----------|---------|----------|
+| **Backend README** | Complete API documentation | [backend/README.md](./backend/README.md) |
+| **Frontend README** | Frontend routes & API calls | [frontend/README.md](./frontend/README.md) |
+| **Main README** | Project overview | This file |
+
+---
+
+## 🎯 Submission Checklist
+
+### Assignment 1 (Backend)
+- [x] Live API URL provided
+- [x] Source code in `/backend` directory
+- [x] README.md with all endpoints, purposes, examples
+
+### Assignment 2 (Frontend)
+- [x] Live frontend URL provided
+- [x] Source code in `/frontend` directory
+- [x] README.md with all API routes, functionality, examples
+
+---
+
+## 📝 License
 
 This project is created for educational purposes.
 
+---
+
+**Repository:** https://github.com/zzsss8836699/fullstack-portfolio-blog
+
+**Live Demo:**
+- Frontend: https://portfolio-blog-frontend-ln7h5bpo5-asdosadkkoas-projects.vercel.app
+- Backend: https://portfolio-blog-47o1zr9pi-asdosadkkoas-projects.vercel.app

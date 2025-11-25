@@ -3,7 +3,11 @@
 A RESTful API built with Node.js, Express, and MongoDB for managing portfolio projects and blog posts.
 
 ## Live API URL
-[Your deployed API URL here]
+**Production API:** https://portfolio-blog-47o1zr9pi-asdosadkkoas-projects.vercel.app
+
+**API Base:** https://portfolio-blog-47o1zr9pi-asdosadkkoas-projects.vercel.app/api
+
+**Health Check:** https://portfolio-blog-47o1zr9pi-asdosadkkoas-projects.vercel.app/api/health
 
 ## Features
 

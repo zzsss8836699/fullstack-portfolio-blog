@@ -5,10 +5,10 @@ A modern, responsive React application for showcasing portfolio projects and blo
 ## 🌐 Live Deployment
 
 ### Live Frontend URL
-**Production Site:** https://portfolio-blog-frontend-ln7h5bpo5-asdosadkkoas-projects.vercel.app
+**Production Site:** https://frontend-alpha-three-48.vercel.app/
 
 ### Live Backend URL
-**Backend API:** https://portfolio-blog-47o1zr9pi-asdosadkkoas-projects.vercel.app/api
+**Backend API:** https://backend-alpha-green-49.vercel.app/api
 
 ### Source Code
 **GitHub Repository:** https://github.com/zzsss8836699/fullstack-portfolio-blog
@@ -594,7 +594,7 @@ The UI follows HarmonyOS design principles with:
 The frontend is configured to communicate with the backend API at:
 
 **Development:** `http://localhost:5000/api`
-**Production:** `https://portfolio-blog-47o1zr9pi-asdosadkkoas-projects.vercel.app/api`
+**Production:** `https://backend-alpha-green-49.vercel.app/api`
 
 All API calls are made using Axios with the base URL configured in each component.
 
